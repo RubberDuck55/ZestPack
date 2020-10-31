@@ -24,4 +24,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Test list
-        run: zip build.zip
+        run: zip build.zip *
