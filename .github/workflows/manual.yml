@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Commit
+name: Zip it up
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
+      message:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Commit Message'
         # Default value if no value is explicitly provided
@@ -37,5 +37,5 @@ jobs:
         run: |
           zip -r build.zip .
           git add build.zip
-          git commit -m "Yay new build"
+          git commit -m "${{ github.event.inputs.message }}"
           git push origin master
