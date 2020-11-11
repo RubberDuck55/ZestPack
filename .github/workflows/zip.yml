@@ -21,9 +21,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        
+      - name: Git Setup
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Zip and Ship
         run: |
           zip -r build.zip .
           git add build.zip
