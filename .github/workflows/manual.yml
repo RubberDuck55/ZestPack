@@ -28,7 +28,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Zip and Ship
       run: #Ready the files
-          zip -r build.zip *;
+          zip -r build.zip .;
           git add build.zip;
           git commit -m "Yay new build";
           git push origin master
